@@ -1,0 +1,40 @@
+Topic: Longest Palindromic Substring
+Given a string s, return the longest palindromic substring in s.
+A string is called a palindrome string if the reverse of that string is the same as the original string.
+
+Example 1:
+
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+
+
+Soltuion:
+
+class Solution {
+    int maxPalindromeLength = Integer.MIN_VALUE;
+    String maxPalindrome = "";
+    public String longestPalindrome(String s) {
+        int i=0;
+        while(i<s.length()){
+            checkPalindrome(s,i,i);
+            checkPalindrome(s,i,i+1);
+            i++;
+        }
+        return maxPalindrome;
+        
+    }
+    
+    public void checkPalindrome(String s, int i, int j){
+        while(i>=0 && j<s.length() && s.charAt(i)==s.charAt(j)){
+            i--;
+            j++;
+        }
+        if(j-i-1 > maxPalindromeLength){
+            maxPalindrome = s.substring(i+1,j);
+            maxPalindromeLength = j-i-1;
+        }
+        
+        
+    }
+}
