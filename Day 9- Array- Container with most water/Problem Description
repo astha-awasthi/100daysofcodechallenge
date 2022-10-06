@@ -1,0 +1,68 @@
+Topic: Array
+Question: Container with Most Water
+You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
+Return the maximum amount of water a container can store.
+
+Possible Test Cases:
+Case 1: Input: height = [1,8,6,2,5,4,8,3,7]
+        Output: 49
+        Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].
+        In this case, the max area of water (between 8 and 7 )the container can contain is 49.
+
+Case 2: what if the input height is same
+       Input: height = [1,1]
+       Output: 1
+
+Case 3: what if the input height is null
+        Input: null
+        Output: 0
+
+Constraints:
+n = height.length
+2 <= n <= 10^5
+0 <= height[i] <= 10^4
+
+Explaination of the problem:
+Water can be filled between two bars and the horizontal surface between them. Consider these two bars and horizontal surface as the walls of the container. 
+If the heights of both bars are equal then no problem at all, we can fill water up to the height of the bars.
+But if the walls are of different lengths then we can only fill water up to the height of the shorter bar. This is pretty intuitive.
+
+Thus, the container made by any two bars is a rectangle whose —
+Width = horizontal distance between two bars or the difference between their indices.
+Length = shorter of the two bars.
+Area = (Length * Width)
+
+Test Case 1 Solution:
+If we take bars a[1] = 8 and a[8] = 7 as a container then its area will be —
+
+Area = min(a[1], a[8]) * (8 - 1)
+     = min(8, 7) * 7
+     = 7 * 7
+     = 49
+If we take bars a[2] = 6 and a[6] = 8 as a container then we can calculate its area as —
+
+Area = min(a[2], a[6]) * (6 - 2)
+     = min(6, 8) * 4
+     = 6 * 4
+     = 24
+Similarly, we can calculate the area of all the pairs and find out which one is maximum.
+
+Approach 1: We will calculate areas for all pair of bars and return maximum value. This will take two nested loops and the time complexity will be O(n^2).
+Can it be better? 
+Yes using the pointer approach
+Approach 2: We can start with the container of maximum width and then if there is we find a bar whose height is greater than the shorter of the previous two bars we took into 
+consideration, 
+then we can calculate the area between those two bars and so on.
+Since we are starting with the container of maximum width which is represented by the indices of the array, we will have to maintain two pointers who will keep 
+track of width of the container.
+
+the steps will be something like this —
+
+-Initialize two pointers ⇨ left = 0 (first index) and right = height.length - 1 (last index).
+-Loop until the two pointers meet.
+-Inside loop, calculate the height of the shorter bar — one bar is represented by [height[left]] and the other bar is represented by [height[right]].
+-Calculate the area between the two bars and compare it with the current maximum.
+-Move the pointers if there exists a bar whose height is greater than the current one.
+
+And that’s it, We will return the maximum area at the end.
