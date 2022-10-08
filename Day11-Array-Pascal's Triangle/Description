@@ -18,3 +18,41 @@ The triangle is also symmetrical. The numbers on the left side have identical ma
 What do you notice about the horizontal sums?
 Is there a pattern?
 They double each time (powers of 2).
+
+***test cases***
+Test Case 1:
+Input: numRows = 5
+Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+
+Test Case 2:
+Input: numRows = 1
+Output: [[1]]
+
+***Constraints***
+1 <= numRows <= 30
+
+Explaination:
+
+Solution :
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        
+        List<List<Integer>> triangle = new ArrayList<>();
+        int num = 1;
+        
+        for(int i = 0; i < numRows; i++){
+            List<Integer> list = new ArrayList<>();
+            for(int j = 0; j <= i; j++){
+                if(j == 0 || i == 0){
+                    num = 1;
+                    list.add(num);
+                }else{
+                    num = num * (i - j + 1) / j;
+                    list.add(num);
+                }
+            }
+            triangle.add(list);
+        }
+        return triangle;   
+    }
+}
