@@ -1,0 +1,20 @@
+Topic: Array
+Sub Topic: Pascal's Triangle
+
+One of the most interesting Number Patterns is Pascal's Triangle (named after Blaise Pascal, a famous French Mathematician and Philosopher).
+To build the triangle, start with "1" at the top, then continue placing numbers below it in a triangular pattern.
+Each number is the numbers directly above it added together.
+
+Patterns Within the Triangle
+***Diagonals***
+- The first diagonal is, of course, just "1"s
+- The next diagonal has the Counting Numbers (1,2,3, etc).
+- The third diagonal has the triangular numbers
+
+***Symmetrical***
+The triangle is also symmetrical. The numbers on the left side have identical matching numbers on the right side, like a mirror image.
+
+***Horizontal Sums***
+What do you notice about the horizontal sums?
+Is there a pattern?
+They double each time (powers of 2).
