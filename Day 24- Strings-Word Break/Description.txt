@@ -1,0 +1,52 @@
+TOPIC: STRINGS
+SUB TOPIC: WORD BREAK
+LANGUAGE USED: JAVA
+
+Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+
+***TEST CASES***
+TEST CASE 1:
+Input: s = "leetcode", wordDict = ["leet","code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+
+TEST CASE 2:
+Input: s = "applepenapple", wordDict = ["apple","pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+Note that you are allowed to reuse a dictionary word.
+
+TEST CASE 3:
+Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
+Output: false
+ 
+***CONSTRAINTS***
+
+1 <= s.length <= 300
+1 <= wordDict.length <= 1000
+1 <= wordDict[i].length <= 20
+s and wordDict[i] consist of only lowercase English letters.
+All the strings of wordDict are unique.
+
+***SOLUTION APPROACH***
+data structure
+boolean[] dp represents whether s[0....i] can be formed by dictionary.
+
+Intuition
+
+Notice that we need to check two things in if condition:
+
+(1) mySet.contains(sub)
+This one is obvious. We need to check if the sub string exists in set/ dictionary.
+
+(2) j == 0 || dp[j - 1]
+
+We can ignore j == 0. The only reason we need it simply because dp[0-1] doesn't exist.
+We need to check if dp[j - 1] is true because if the previous sub string also exists in dictionary then we know that sub string s[0...j] can be formed by dictionary.
+
+For example,
+s = "leetcode" and wordDict = "leet", "code"]
+We find "leet" in dictionary and j == 0 so we update dp[3] = true. It means we can form"leet" in dictionary.
+We find "code" in dictionary and dp[3] == true so we update dp[7] = true. It means we can form "leetcode" in dictionary.
+If we found "code" can be formed in dictionary, then we also need to check if "leet" can be formed in dictionary. That's why we need to have both (1) and (2) in the if conditions.
