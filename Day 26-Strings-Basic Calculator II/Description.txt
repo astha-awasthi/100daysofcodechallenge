@@ -1,0 +1,70 @@
+📌TOPIC: STRINGS
+📌SUBTOPIC: Basic Calculator II
+📌LANGUAGE USED: JAVA
+
+Given a string s which represents an expression, evaluate this expression and return its value. 
+The integer division should truncate toward zero.
+You may assume that the given expression is always valid. All intermediate results will be in the range of [-2^31, 2^31 - 1].
+Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as eval().
+
+📌TEST CASES
+TEST CASE 1:
+
+Input: s = "3+2*2"
+Output: 7
+
+TEST CASE 2:
+Input: s = " 3/2 "
+Output: 1
+
+TEST CASE 3:
+Input: s = " 3+5 / 2 "
+Output: 5
+ 
+📌CONSTRAINTS
+
+1 <= s.length <= 3 * 10^5
+s consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces.
+s represents a valid expression.
+All the integers in the expression are non-negative integers in the range [0, 2^31 - 1].
+The answer is guaranteed to fit in a 32-bit integer.
+
+📌SOLUTION APPROACH
+If all the operators have the same priority, we can calculate all the numbers and operators one by one and save just the latest result. However, we need to handle the priorities of operators, i.e. '*' and '/' have higher priority than '+' and '-'. So we use a stack to track the numbers who have been met.
+
+A straightforward algorithm is:
+
+Use a global var opr to remember the latest operator we have met, a global var num for the number we are dealing with, and a stack to accommodate the numbers.
+
+Go through the string by characters, and the rule is:
+
+If current character is blank, continue to next step.
+If current character is digit, multiply num with 10 and add current value to num:
+                num = num * 10 + (chr - '0');
+Otherwise, current character should be a operator, which means we have finished a new number (or hit the end of the string). At the time, we process the number with the latest operator opr by the rule:
+If opr is '+' or '-', we are not sure about the operating because there might be a operator with higher priority in the future. So add num or -num to the stack:
+case '+':
+                        stack.push(num);
+                        break;
+                    case '-':
+                        stack.push(-num);
+                        break;
+If opr is '*' or '/', we can perform the operating immediately. So get the latest number of the stack, perform the operating and push the result back to the stack:
+
+                    case '*':
+                        stack.push(stack.pop() * num);
+                        break;
+                    case '/':
+                        stack.push(stack.pop() / num);
+                        break;
+At last, we have a stack containing a couple of numbers and all of them have the same operator '+'. Just sum them up and return the result:
+
+        while(!stack.isEmpty())res += stack.pop();
+Note that we need to initialize opr to '+' to handle the first number:
+
+         char opr = '+';
+and add an extra '+' to the end of the string to make sure the latest number to be hanlded:
+
+        for(char chr : (s + "+").toCharArray()) {
+        
+📌SUGGESTIONS are WELCOME!
