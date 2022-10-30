@@ -23,7 +23,7 @@ The strings are the same, so return true.
 
 
 
-📍 TEST CASE 1:
+📍 TEST CASE 2:
 
 Input: word1 = ["a", "cb"], word2 = ["ab", "c"]
 
