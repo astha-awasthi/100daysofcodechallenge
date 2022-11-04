@@ -1,0 +1,41 @@
+📌 TOPIC: STRINGS
+📌 SUBTOPIC: WORD PATTERN
+📌 LANGUAGE USED: JAVA
+
+Given a pattern and a string s, find if s follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
+
+📌 TEST CASES
+📍 TEST CASE 1:
+• Input: pattern = "abba", s = "dog cat cat dog"
+• Output: true
+
+📍 TEST CASE 2:
+• Input: pattern = "abba", s = "dog cat cat fish"
+• Output: false
+
+📍TEST CASE 3:
+• Input: pattern = "aaaa", s = "dog cat cat dog"
+• Output: false
+ 
+📌 CONSTRAINTS:
+
+• 1 <= pattern.length <= 300
+• pattern contains only lower-case English letters.
+• 1 <= s.length <= 3000
+• s contains only lowercase English letters and spaces ' '.
+• s does not contain any leading or trailing spaces.
+• All the words in s are separated by a single space.
+
+EXPLAINATION
+• Problem requies for a Bijection between letters and words, i.e. every letter must map to a unique word and every word must map back to the same letter.
+• This means we'll need a letter-to-word hashMap and a reverse (word-to-letter) hashMap to perform quick look-ups and insertions
+• This also means that size(pattern) must be equal to words in s, else bijection is impossible
+• When a new letter or word is seen, populate both the maps
+• When an existing letter or word is seen, check if the letter or the word corresponds to the word or letter respectively in the 2 maps
+• If there's a mismatch, return false. Do this for all the letters in pattern/words in s
+• If no mismatch found, return true
+
+
+          ______________________________THANKYOU_______________________________________
