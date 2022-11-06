@@ -1,0 +1,32 @@
+📌 TOPIC: SORTING
+📌 SUB TOPIC: MISSING NUMBER in the given range
+📌 LANGUAGE USED: JAVA
+
+ Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+
+📌 SAMPLE INPUT AND SAMPLE OUTPUT
+
+📍TEST CASE 1:
+● Input: nums = [3,0,1]
+● Output: 2
+● Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+
+📍TEST CASE 2:
+● Input: nums = [0,1]
+● Output: 2
+● Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+
+📍TEST CASE 3:
+● Input: nums = [9,6,4,2,3,5,7,0,1]
+● Output: 8
+● Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
+
+📌 CONSTRAINTS
+● n == nums.length
+● 1 <= n <= 104
+● 0 <= nums[i] <= n
+● All the numbers of nums are unique.
+
+📌 SOLUTION APPROACH
+We will look for the actual sum of the elements and then look for the expected sum of elements 
+then missing number= expected sum- actual sum
