@@ -1,0 +1,37 @@
+📌 TOPIC: SORTING
+📌 SUB TOPIC: SORT AN ARRAY
+📌 LANGUAGE USED: JAVA
+
+Given an array of integers nums, sort the array in ascending order and return it.
+You must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.
+
+📌 TEST CASES
+
+📍 TEST CASE 1:
+• Input: nums = [5,2,3,1]
+• Output: [1,2,3,5]
+• Explanation: After sorting the array, the positions of some numbers are not changed (for example, 2 and 3), while the positions of other numbers are changed (for example, 1 and 5).
+
+📍 TEST CASE 2:
+• Input: nums = [5,1,1,2,0,0]
+• Output: [0,0,1,1,2,5]
+• Explanation: Note that the values of nums are not necessairly unique.
+ 
+
+📌 Constraints:
+
+• 1 <= nums.length <= 5 * 10^4
+• -5 * 10^4 <= nums[i] <= 5 * 10^4
+
+📌 SOLUTION APPROACH
+
+📍 OOH the question is asking us to sort an array, so simple right? use Arrays.sort(nums) and be done with life, but stop let's try not to be lazy today? 
+we are going to solve this using top three basic sorting algorithms -- Insertion sort, Quick sort and Merge sort depending on the size of array.
+
+📍 Insertion sort - stable sort and in-place, T: O(N^2) and S: O(1), good for lower size arrays.
+
+📍 Quick sort - unstable and in-place, T: O(Nlogn) - average case and S: O(1) (ignorign recursion call stack memory), divide and conquer algorithm. 
+The key part is partioning(Naive, Lomuto and Hoare's partition algorithm).
+
+📍 Merge Sort - stable sort and not in-place(arguable) , T: O(NlogN) S: O(N) , used in external sorting - for massive data. 
+The key part is mergeFunction - I used two pointer approach.
