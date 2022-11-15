@@ -1,0 +1,24 @@
+📌 TOPIC: SORTING
+📌 SUB TOPIC: INTERSECTION OF TWO ARRAYS
+📌 LANGUAGE USED: JAVA
+
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
+📌 TEST CASES
+📍 TEST CASE 1:
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+
+📍 TEST CASE 2:
+• Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+• Output: [9,4]
+• Explanation: [4,9] is also accepted.
+
+📌 CONSTRAINTS
+• 1 <= nums1.length, nums2.length <= 1000
+• 0 <= nums1[i], nums2[i] <= 1000
+
+📌 The intitution is 
+1. sort both the array 
+2.here we will use two pointer to check element from both the array 
+as both the array are sorted so we will adjust the array index by comparing the array values 
