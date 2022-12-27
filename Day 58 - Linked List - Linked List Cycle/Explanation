@@ -1,0 +1,45 @@
+📌Explanation:
+
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. 
+Internally, pos is used to denote the index of the node that tail's next pointer is connected to. 
+
+Note that pos is not passed as a parameter.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+
+📌How we are going to do that:
+
+1. we are going to use two pointers, one pointer which is going to move just one step at a time, second is a pointer which is going to move two steps at a time.
+
+2. If there is a cycle present in LinkedList then these pointers are going to meet at a point otherwise the other pointer will be null when the first pointer is in the mid of LinkedList.
+
+📌Test Cases:
+
+📍Test Case 1:
+
+•Input: head = [3,2,0,-4], pos = 1
+
+•Output: true
+
+•Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
+
+📍Test Case 2:
+
+•Input: head = [1,2], pos = 0
+
+•Output: true
+
+•Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+
+
+📍Test Case 3:
+
+•Input: head = [1], pos = -1
+
+•Output: false
+
+•Explanation: There is no cycle in the linked list.
