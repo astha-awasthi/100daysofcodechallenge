@@ -1,0 +1,34 @@
+📌Explanation:
+
+Given the head of a singly linked list, return the middle node of the linked list.
+If there are two middle nodes, return the second middle node.
+In this problem we use two pointer to traverse the whole linked list, 
+initialize both the pointers to head. t1 is used to point by one and t2 by two. By the time t2 reaches end of the linked list t1 reaches the middle of linked list.
+
+
+📌Test Case-
+
+📍Test Case 1:
+
+•Input: head = [1,2,3,4,5]
+
+•Output: [3,4,5]
+
+•Explanation: The middle node of the list is node 3.
+
+
+📍Test Case 2:
+
+•Input: head = [1,2,3,4,5,6]
+
+•Output: [4,5,6]
+
+•Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
+
+
+
+📌Constraints:
+
+The number of nodes in the list is in the range [1, 100].
+
+1 <= Node.val <= 100
