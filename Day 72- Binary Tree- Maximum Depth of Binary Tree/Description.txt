@@ -17,3 +17,9 @@ Example 2:
 
 Input: root = [1,null,2]
 Output: 2
+
+SOLUTION APPROACH:
+To calculate it's height, we draw line and found out that it's height is 3
+
+Now, by using recursion how can we find it. So, we know the root & it's child will be find by Hypothesis. So we go deep inside to it's left, then to it's right & from there we will get the deepest root to child value of it's left & right. We will compare both of them and that will be our Induction and which one has the greatest value will be added to 1, as root will count as well.
+Now in this the smallest valid Input could be if root is null & that;s our Base condition.
