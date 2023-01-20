@@ -1,13 +1,13 @@
-
 class Solution {
-	 public String makeGood(String s) {
-        for (int i = 0; i < s.length() - 1; i++) {
-           
-            if (Math.abs(s.charAt(i) - s.charAt(i+1)) == 32) {  
-               
-                return makeGood(s.substring(0, i) + s.substring(i+2));
+    public int timeRequiredToBuy(int[] tickets, int k) {
+        int seconds = 0;
+        for(int i = 0; i < tickets.length; i++){
+            if(tickets[i] < tickets[k]) seconds += tickets[i]; // only add the time needed to buy his tickets
+            else{
+                if(i <= k) seconds += tickets[k]; 
+                else seconds += tickets[k] - 1; 
             }
-        }     
-        return s;
+        }
+        return seconds;
     }
 }
