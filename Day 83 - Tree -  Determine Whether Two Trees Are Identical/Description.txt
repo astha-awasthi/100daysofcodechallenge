@@ -1,0 +1,13 @@
+In this program, we need to check whether two trees are identical or not. For two trees to be identical, they have to satisfy two conditions:
+1- Structure of both the trees should be the same.
+2- Nodes present in one tree should be present in another tree.
+
+Algorithm:
+1- Define Node class which has three attributes namely: data left and right. Here, left represents the left child of the node and right represents the right child of the node.
+2- When a node is created, data will pass to data attribute of the node and both left and right will be set to null.
+3- Define another class which has an attribute root.
+      a- Root represents the root node of the tree and initializes it to null.
+4- areIdenticalTrees() will check whether two trees are identical or not:
+      a- If root nodes of both the trees are null then, they are identical.
+      b- If the root node of only one tree is null then, trees are not identical, return false.
+      c- If root node of none of the tree is null, then check whether data of both the nodes are equal and then recursively check the left subtree and right subtree of one tree is identical to another or not.
