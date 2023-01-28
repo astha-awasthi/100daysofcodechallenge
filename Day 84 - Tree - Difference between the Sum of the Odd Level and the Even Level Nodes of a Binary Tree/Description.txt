@@ -1,0 +1,28 @@
+In this program, we need to calculate the difference between the sum of nodes present at odd levels and sum of nodes present at even levels. 
+Suppose, if a tree contains 5 levels, then
+Difference  = (L1 + L 3 + L5) - (L2 + L4)  
+ 
+                 1
+               /   \
+              2     3
+             /     /  \
+            4     5    6
+ In the above diagram, odd levels Nodes are 1,4,5,6
+ and Even level Nodes are 2 and 3.
+ 
+OddLevelSum = 1 + 4 + 5 + 6 = 16  
+EvenLevelSum = 2 + 3 = 5  
+Difference = |16 - 5| = 11  
+
+
+Algorithm:
+
+1. Define Node class which has three attributes namely: data, left, and right. Here, left represents the left child of the node and right represents the right child of the node.
+2. When a node is created, Assign the data part of a node with an appropriate value having its left and right child as NULL.
+3. Define another class which has an attribute root.
+      a. Root represents the root node of the tree having null value initially.
+4. The difference() will calculate the difference between the sum of nodes at the odd and even levels:
+      a.Traverse through the binary tree level wise using Queues.
+      b. Keep track of current level using the variable currentLevel.
+      c. If the currentLevel is divisible by 2, then add all the values of nodes present in currentLevel to variable evenLevel. Else, add all the values of nodes to variable oddLevel.
+      d. Calculate the difference by subtracting value present in evenLevel from oddLevel.           
