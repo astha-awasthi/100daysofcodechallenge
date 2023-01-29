@@ -1,0 +1,23 @@
+In this program, we need to find out the maximum width of the binary tree. The width of the binary tree is the number of nodes present in any level. So, the level which 
+has the maximum number of nodes will be the maximum width of the binary tree. To solve this problem, traverse the tree level-wise and count the nodes in each level.
+          
+                                 1
+                              /    \
+                            2        3
+                          /  \      /  \
+                       ___________________  
+                         4    5    6    7       <=  Maximun Width
+                       ___________________
+                        /
+                       8 
+      
+
+In the given binary tree,
+
+Level 1 has one node, so maxWidth = 1.
+Level 2 has two nodes, so maxWidth = 2 as (2 > 1).
+Level 3 has four nodes, so maxWidth = 4 as (4 > 2).
+Level 4 has one node, so maxWidth = 4 as (1 < 4).
+
+So, the maximum width of the above binary tree is 4 denoted by between underlines.
+                 
