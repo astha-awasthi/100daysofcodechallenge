@@ -1,0 +1,12 @@
+In this program, we need to check whether all the leaves of the given binary tree are at same level or not.
+
+A Node is said to be leaf if it doesn't have any child node. In the below diagram, nodes 4, 5 and 6 are leaf nodes as they don't have any child node. 
+Nodes 4, 5 and 6 are present at the same level, i.e., Level 2.
+
+             1
+          /     \
+        2         3
+      ---------------
+     /          /   \
+    4          5     6
+     -----------------
