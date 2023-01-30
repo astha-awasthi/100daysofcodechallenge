@@ -1,0 +1,15 @@
+In this program, we need to find out the nodes which are at the maximum distance in the binary tree. According to our approach, all the distances between all the nodes of the 
+tree will be kept in the variable distance. The distance with the maximum value will be kept by using the variable MaxDistance. Initially, MaxDistance is initialized with the 
+value of distance. If any value is found greater than MaxDistance, overwrite the value of MaxDistance.
+
+Repeat this process until we find the maximum possible distance between two nodes of the tree. The algorithm of the process is given below.
+
+                               1
+                             /   \
+                            2      3
+                          /   \   /  \
+                         4     5  6   7
+                                        \
+                                         8
+                                          \
+                                            9
