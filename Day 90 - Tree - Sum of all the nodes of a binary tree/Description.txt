@@ -1,0 +1,10 @@
+In this program, we need to calculate the sum of nodes present in the binary tree. First, we will traverse through the left sub-tree and calculate the sum of nodes present in 
+the left sub-tree. Similarly, we calculate the sum of nodes present in the right sub-tree and calculate total sum by adding the roots data.
+                        
+                              5
+                            /   \
+                          2       9
+                         /      /   \
+                        1      8     6 
+ For the given tree, sum of nodes of the binary tree will be 1 + 2 + 5 + 8 + 6 + 9 = 31.                       
+                        
