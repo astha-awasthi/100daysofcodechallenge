@@ -1,0 +1,19 @@
+In this program, we need to find out the maximum height of the binary tree. The height of the binary tree can be defined as the number of nodes between root and a leaf. 
+Maximum height will be the number of levels between root and deepest leaf. To solve this problem, we traverse through the left subtree and calculate the height of the 
+left subtree. Again, calculate the height of the right subtree by traversing through it. Maximum height will be maximum of the height of the left subtree and right 
+subtree.
+                           1
+                         /   \
+                       2       3
+                     /       /   \
+                   4        5      6
+                                    \
+                                      7
+                                       \
+                                         8
+In the above binary tree,
+
+Height of left subtree is 2.  
+Height of right subtree is 4.  
+MaxHeight = Max(leftHeight, rightHeight) + 1; Here, 1 Represents root node's height,  
+The maximum height of the given binary tree is (4 + 1) = 5 .                                     
