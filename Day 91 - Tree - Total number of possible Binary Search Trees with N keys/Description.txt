@@ -1,0 +1,34 @@
+In this program, we need to find out the total number of binary search trees can be constructed with n values. Below diagram shows a possible binary search tree with the key 
+value as 3. So, we can construct a total of five binary search trees. When we choose node 1 as the root node, we get two trees. Similarly, one tree with 2 as root nodes and 
+two trees when we select 3 as the root node.
+
+This approach involves selecting a node recursively as the root node and create possible binary search tree.
+
+An easy way to calculate the total number of possible binary search trees are through Catalan number:
+Cn = (2n)! / n! *(n+1)! 
+   1                  
+    \
+     2
+      \
+       3
+    
+    
+    1
+     \
+      3
+     /
+    2
+    
+    
+     2
+   /   \
+  2     3
+  
+  
+         3
+        /
+       2
+      /
+     1
+     
+     
