@@ -1,0 +1,22 @@
+Trees are the non-linear data structure that stores data hierarchically. The tree is a collection of elements called nodes. Nodes are connected through edges and contain data. 
+The first node of the tree is called Root. Each node may or may not have children node. The node which doesn't have any child node is called leaf.
+
+The binary tree is another kind of tree data structure in which each node can have at most two children. That is, each node in the binary tree will have data, left child and 
+right child.
+                   1
+                 /   \
+                2     3
+               /     / \
+              4     5   6 
+              
+Above diagram represents a binary tree in which 1 represent the root node of the tree. Node 2 has 4 as its left child and Node 3 has 5 as its left child and 6 as its right 
+child. Nodes 4, 5 and 6 are leaf nodes as they don?t have any child node.           
+
+   
+
+Explanation:In this program, we will search a particular value in the binary tree. If it is present, print the message "Element is present in the binary tree" else print the 
+message "Element is not present in the binary tree". In a nutshell, we will first compare data of root with data of node to be searched. If the match is found, set the flag 
+to true. Else, search the node in left subtree and then in the right subtree.
+
+   
+    
